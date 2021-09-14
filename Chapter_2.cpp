@@ -164,7 +164,85 @@ void twopointone()
 void twopointtwo()
 {
     system("CLS");
+    // COUNTING
+    std::cout<<"1. Base Problem "<<std::endl;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    int choice;
+    std::cin>>choice;
     
+    switch(choice)
+    {
+        case 1: 
+        {
+            std::cout<<"Enter number of students : ";
+            int n = 5;
+            std::cin>>n;
+
+            int marks[n];
+            for(int i = 0 ; i < n ; i++)
+            {
+                std::cout<<"Enter marks of student "<<i+1<<" : "<<std::endl;
+                std::cin>>marks[i];
+
+            }
+            int pass = 0;
+            for(int i = 0 ;  i < n ; i++)
+            {
+                if(marks[i] >= 50)
+                {
+                    pass++;
+
+                }
+            }
+            std::cout<<"Number of passed students: "<<pass<<std::endl;
+
+
+            
+        }
+        break;
+
+        case 2:
+        {
+            std::cout<<"Enter number of students : ";
+            int n = 5;
+            std::cin>>n;
+
+            int marks[n];
+            for(int i = 0 ; i < n ; i++)
+            {
+                std::cout<<"Enter marks of student "<<i+1<<" : "<<std::endl;
+                std::cin>>marks[i];
+
+            }
+            int pass = 0;
+            for(int i = 0 ;  i < n ; i++)
+            {
+                if(marks[i] >= 50)
+                {
+                    pass++;
+
+                }
+            }
+            std::cout<<"Number of passed students: "<<pass<<std::endl;
+
+            float percentage_pass_rate;
+            percentage_pass_rate = (pass/n)*100;
+            std::cout<<"Percentage pass rate= "<<percentage_pass_rate<<"%\n";
+
+        }
+        case 3:
+        {
+            /*
+            if fail count--;
+            this is better when pass students are more than fail students;
+            
+            */
+        }
+    }
 }
 
 void twopointthree()
