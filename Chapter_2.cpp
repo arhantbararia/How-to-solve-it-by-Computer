@@ -8,11 +8,11 @@ void twopointone()
     // EXCHANGING VALUES OF VARIABLES
     int choice;
     std::cout<<"1. PROBLEM"<<std::endl;
-    std::cout<<"2. supplement problem 2.1.1"<<std::endl;
-    std::cout<<"3. supplement problem 2.1.2"<<std::endl;
-    std::cout<<"4. supplement problem 2.1.3"<<std::endl;
-    std::cout<<"5. supplement problem 2.1.4"<<std::endl;
-    std::cout<<"6. supplement problem 2.1.5"<<std::endl;
+    for(int i = 2 ; i < 7; i++)
+    {
+        std::cout<<i<<". supplement problem 2.1."<<i-1<<std::endl;
+
+    }
     std::cout<<"\n Enter your Choice : ";
     std::cin>>choice;
     switch(choice)
@@ -491,6 +491,96 @@ void twopointthree()
 
 void twopointfour()
 {
+    std::cout<<"1. Base Problem "<<std::endl;
+    for(int i = 2 ; i < 10 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+        {
+            //Base problem
+
+            //could have used recursion but thats the pascal implementation given
+
+            int n;
+            std::cout<<"Enter number you want factorial of: ";
+            std::cin>>n;
+
+            int factor =1 ;
+            for(int i = 1 ; i <= n ; i++)
+            {
+                factor *= i;
+
+            }
+            std::cout<<"Factor of "<<n<<" is "<<factor;
+
+            
+        }
+        break;
+
+        case 2:
+        {
+            //supplement problem 2.4.1
+            int n;
+            std::cout<<"Computing 1/n! for n :";
+            std::cin>>n;
+
+            int factor = 1;
+            for(int i = 1 ; i <= n ; i++)
+            {
+                factor *= i;
+
+            }
+            
+            float reciprocal = 1/factor;
+            std::cout<<" 1/"<<n<<"! = "<<reciprocal<<std::endl;
+
+            
+
+            
+        }
+        break;
+
+        case 3:
+        {
+            int n ,x;
+            std::cout<<"Enter n = ";std::cin>>n;
+            std::cout<<"Enter x = ";std::cin>>x;
+
+            // computing x^n/n! ; using the fact from notes on design that computation of factorial uses n multiplications for n!
+            // similar conclusion can be drawn for x^n
+
+            float result =1; // it cant be 0, cause for result to be zero factorial must go infinite
+
+
+            for(int i = 1 ; i <= n ; i++)
+            {
+                result *= ((float)x/(float)i);
+            }
+            std::cout<<x<<"^"<<n<<"/"<<n<<"! = "<<result;
+            
+            
+        }
+        break;
+
+        case 4:
+        {
+            int n;
+            bool isfact;
+
+            
+        }
+
+
+    }
+
     system("CLS");
     
 }
