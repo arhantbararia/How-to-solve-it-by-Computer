@@ -241,6 +241,7 @@ void twopointtwo()
             this is better when pass students are more than fail students;
             
             */
+                
         }
     }
 }
@@ -248,7 +249,244 @@ void twopointtwo()
 void twopointthree()
 {
     system("CLS");
+    std::cout<<"1. Base Problem "<<std::endl;
+    for(int i = 2 ; i < 10 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
     
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+            {
+                int n;
+                std::cout<<"Enter number of inputs: ";
+                std::cin>>n;
+
+                float array[n];
+                for(int i = 0  ; i < n; i++)
+                {
+                    std::cin>>array[i];
+
+                }
+                int sum = 0;
+
+                for(int i = 0 ; i < n; i++)
+                {
+                    sum += array[i];
+
+                }
+                std::cout<<"sum is: "<<sum<<std::endl;
+
+
+            }
+            break;
+            case 2
+            {
+                int n;
+                std::cout<<"Enter number of inputs: ";
+                std::cin>>n;
+
+                float array[n];
+                for(int i = 0  ; i < n; i++)
+                {
+                    std::cin>>array[i];
+
+                }
+                
+                int sum =0 ;
+                for(int i = 0 ; i < n; i++)
+                {
+                    sum += array[i];
+
+                }
+                float avg;
+                avg = sum/n;
+                std::cout<<"Average is: "<<avg<<std::endl;
+
+            }
+            break;
+
+            case 3:
+            {
+                
+                int n;
+                std::cout<<"Enter number of inputs: ";
+                std::cin>>n;
+                int num;
+                std::cin>>num;
+                int sum = num;  // initialising it to first input , so the adding to zero is not required ;
+
+                for(int i = 0  ; i < n; i++)
+                {
+                    std::cin>>num;
+                    sum += num;
+                    
+
+                }
+                std::cout<<"Sum is: "<<sum<<std::endl;
+
+            }
+            break;
+
+            case 4:
+            {
+                int n;
+                std::cout<<"Enter number of inputs: ";
+                std::cin>>n;
+                int num;
+                std::cin>>num;
+                int sum = num*num;
+                
+                for(int i = 0 ; i< n-1 ; i++)
+                {
+                    std::cin>>num;
+                    sum += (num*num);
+
+                }
+                
+            }
+            break;
+
+            case 5:
+            {
+                int n;
+                std::cout<<"Enter number of inputs: ";
+                std::cin>>n;
+                float reciprocal_sum = 0.0f ;
+
+                float Harmonic_mean;
+                
+                int num;
+                std::cin>>num;
+                reciprocal_sum = 1/num;
+
+                for(int i= 0 ; i < n-1 ; i++)
+                {
+                    std::cin>>num;
+                    reciprocal_sum += 1/num;
+
+                }
+                Harmonic_mean =n/reciprocal_sum;
+                std::cin>>"Harmonic Mean of inputs"<<Harmonic_mean<<std::endl;
+            }
+            break;
+
+            case 6:
+            {
+                int n;
+                std::cout<<"Enter number of elements in series: ";
+                std::cin>>n;
+                float sum = 0.0f;
+                std::cout<<"a) 1 + 2 + 3 + . . + n = ";
+                for(int i = 1 ; i <= n ; i++ )
+                {
+                    sum += i;
+
+                }
+                std::cout<<sum<<std::endl;
+                sum =0;
+
+                std::cout<<"b) 1 + 3 + 5 +  . . n =";
+                for(int i = 1 ; i <= n ; i++ )
+                {
+                    if(int i%2 != 0)
+                    {
+                        sum += i;
+                    }
+                    
+                }
+                std::cout<<sum<<std::endl;
+                sum = 0 ;
+
+                std::cout<<"b) 2 + 4 + 6 +  . . n =";
+                for(int i = 1 ; i <= n ; i++ )
+                {
+                    if(int i%2 == 0)
+                    {
+                        sum += i;
+                    }
+                    
+                }
+                std::cout<<sum<<std::endl;
+
+                sum = 0 ;
+
+                std::cout<<"b) 1 + 1/2 + 1/3 +  . . n =";
+                for(int i = 1 ; i <= n ; i++ )
+                {
+                    if(int i%2 == 0)
+                    {
+                        sum += 1/i;
+                    }
+                    
+                }
+                std::cout<<sum<<std::endl;
+
+            }
+            break;
+
+            case 6:
+            {
+                int n;
+                std::cout<<"Enter number of elements in series: ";
+                std::cin>>n;
+                float sum = 0.0f;
+                for(int i = 0 ; i <= n; i++)
+                {
+                    sum += std::pow(2 ,i);
+
+                }
+
+                std::cout<<"1 + 2 + 4 + 8 + 16 + . .n  = "<<sum<<std::endl;
+                
+            }
+            break;
+
+            case 7:
+            {
+                int n;
+                std::cout<<"Enter number of elements in series: ";
+                std::cin>>n;
+
+                int sum= 0 ;
+                for(int i = 1; i <= n ; i++)
+                {
+                    sum += (i%2 == 0)*(-1) + (i%2 != 0)*(1)
+                }
+                
+                std::cout<<"1 + -1 + 1 + -1 + 1 + . .n  = "<<sum<<std::endl;
+            }
+            break;
+
+            case 8:
+            {
+                 int n;
+                std::cout<<"Enter number of elements in series: ";
+                std::cin>>n;
+
+                int sum= 0 ;
+                int num = 1;
+                for(int i = 1; i <= n ; i++)
+                {
+                    sum += (i%2 == 0)*(-num) + (i%2 != 0)*(num);
+                    num += 2;
+                }
+                
+                std::cout<<"1 + -3 + 5 + -7 + 9 + . .n  = "<<sum<<std::endl;
+            }
+            break;
+
+            default:
+            {
+                std::cout<<"wrong input"<<std::endl;
+                
+            }
+    }
 }
 
 void twopointfour()
