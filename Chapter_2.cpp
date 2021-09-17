@@ -523,7 +523,11 @@ void twopointfour()
             }
             std::cout<<"Factor of "<<n<<" is "<<factor;
 
-            
+            // alternative solution 
+            int factorial(int n )
+            {
+             (n == 0 )|| (n == 1 ) ? return 1 : return n*factorial(n-1);
+            }
         }
         break;
 
@@ -725,6 +729,76 @@ void twopointfour()
 void twopointfive()
 {
     system("CLS");
+    std::cout<<"1. Base Problem "<<std::endl                               ;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+
+        case 1:
+        {
+            float x;
+            float const error = 0.00006f;
+            float const pi = 3.14f;
+            std::cin>>x;
+
+            x *=pi;
+
+            float x2 = x*x;
+
+            float term =x ;
+            float sin = x;
+            float sign =-1;
+            int i = 1 ;
+            
+            while(abs(term) >= error )
+            {
+                
+
+                i += 2;
+                term = (sign) * term * (x2 / (i*(i-1))) ;
+                sin += term;
+                
+            
+
+            }    
+        
+            std::cout<<sin;
+        }
+        break;
+
+        case 2:
+        {
+            int n;
+            std::cin>>n;
+            // making fs
+
+            int fs = 0;
+            int term = 1;
+            int i = 1;      //since 0! = 1 
+            while(i < n)
+            {
+                term = i*term;
+                fs += term;
+                i++;
+            }
+        
+        }
+        break;
+
+
+       
+
+    }
+
+    
         
 }
 
@@ -768,7 +842,7 @@ void UI()
     
     std::cout<<"2.7 Reversing the digits of a number "<<std::endl;
     
-    std::cout<<"2.8 Base conversion "<<std::endl;
+    std::cout<<"2.8 Base conversion "<<std::endl;                  
     
     std::cout<<"2.9 Character to number conversion "<<std::endl;
     std::cout<<"Enter your choice: 2.";
