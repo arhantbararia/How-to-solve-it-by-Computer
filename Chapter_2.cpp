@@ -491,7 +491,9 @@ void twopointthree()
 
 void twopointfour()
 {
-    std::cout<<"1. Base Problem "<<std::endl;
+    
+    system("CLS");
+    std::cout<<"1. Base Problem "<<std::endl                               ;
     for(int i = 2 ; i < 10 ; i++)
     {
         std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
@@ -574,21 +576,156 @@ void twopointfour()
         {
             int n;
             bool isfact;
+            int fact = 1;
 
+            int i = 2;
+
+            while(fact != n)
+            {
+                if(fact > n)
+                {
+                    isfact = false;
+                    break;
+
+                }
+                fact *= i;
+                i++;
+
+            }
+
+            isfact == true ? std::cout<<"Is Factorial " : std::cout<<"not a factorial ";
+            
             
         }
+        break;
 
+        case 5:
+        {
+            int n;
+            std::cin>>n;
 
+            bool isFACTORIAL(int n)
+            {
+                bool isfact = true;
+                int fact = 1;
+                int i = 2;
+
+                while(fact != n)
+                {
+                    if(fact > n)
+                    {
+                        isfact = false;
+                        break;
+                    }
+                    fact *= i;
+                    i++;
+
+                }
+
+                return isfact;
+
+            }
+
+             int n;
+            std::cin>>n;
+            bool found = false;
+
+            for(int i = 1 ; i <= n/2 ; i++)     //dividing by 2 because 2 is the smallest possible factorial other than 1 
+            {
+                if( n%i == 0 )
+                {
+                    int quot = n/i;
+                    if(isFACTORIAL(quot) && quot != 1)
+                    {
+                        found = true;
+                        std::cout<<quot<<std::endl;
+
+                    }
+                }
+                
+            }
+    
+            found == true ? std::cout<<"factorial found! " : std::cout<<"not a factorial ";
+
+        }
+        break;
+
+        case 6:
+        {
+            //Simulate multipication by addition
+
+            int x, y;
+            std::cin>>x;
+            std::cin>>y;
+            bool negative = false;
+            int k = x;
+
+            if(x == 0 || y == 0 ){
+                k = 0;
+                goto label;
+
+            }
+            if(y < 0)
+            {
+                negative = true;
+                y *= -1;
+            }
+            for(int i = 0 ; i < y-1 ; i++)
+            {
+                k +=x;
+
+            }
+            
+            if(negative)
+            {
+                k *= -1;
+            }
+            
+            label:
+            std::cout<<k;
+        }
+        break;
+
+        case 7:
+        {   // binary expansion of (1+x)^n
+            int factorial(int a)
+            {
+                return (a == 1 || a == 0 ) ? 1 : a * factorial(a-1);
+            }
+
+            float Combination(int n , int r)
+            {
+                float C;
+                C = factorial(n) / (factorial(r) * factorial(n-r));
+                return C;
+            }
+            namespace main{
+            int n;
+    
+            std::cin>>n;        // okay this is a mess now 
+
+            for(int i = 0 ;  i <= n ; i += 1)
+            {
+                std::cout<<Combination(n , i)<<"x^"<<i<<"+ \t";
+
+            }
+                        }
+        }
+        break;
+
+        default:
+                {
+                    std::cout<<"wrong option"<<std::endl;
+                }
     }
 
-    system("CLS");
-    
+
 }
 
 void twopointfive()
 {
     system("CLS");
-    
+        
 }
 
 void twopointsix()
