@@ -763,7 +763,7 @@ void twopointfive()
                 
 
                 i += 2;
-                term = (sign) * term * (x2 / (i*(i-1))) ;
+                term = (sign) * term * (x2 / (i*(i-1))) ;       // check BODMASS rule here carefully!
                 sin += term;
                 
             
@@ -793,7 +793,57 @@ void twopointfive()
         }
         break;
 
+        case 3:
+        { int n;
+            std::cin>>n ;
 
+            float e = 1.0f ;
+            float term  =1.0f ;
+            int i = 1;
+
+            while(n > 0)        //  O(n)
+            {
+                term = term * ( 1 / (float)i );
+                i++;
+
+                std::cout<<term<<std::endl;
+                e += term;
+                n--;
+            }
+            std::cout<<e;
+
+        }
+        break;
+
+        case 4:
+        {
+            float const error = 0.00006f;
+                    float const pi = 3.14;
+                    
+                float x;
+                std::cin>>x;
+                    x *= pi;
+
+                float x2 = x*x;
+                
+                    float term = 1;
+
+                    float cos = term;
+                    int sign = -1 ;
+                    int i = 2;
+                    while(abs(term) >= error)
+                    {
+                        term = (sign) * term * (x2 / (i * (i-1)) );
+                        i += 2;
+                        cos += term;
+
+                    }
+                    std::cout<<"\n\n"<<cos;
+
+        }
+        break;
+        
+        default:    std::cout<<"wrong option"<<std::endl;
        
 
     }
