@@ -855,7 +855,194 @@ void twopointfive()
 void twopointsix()
 {
     system("CLS");
+    std::cout<<"1. Base Problem "<<std::endl                               ;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
 
+    switch(choice)
+    {
+        case 1:
+        {   
+            int n;
+            std::cin>>n;
+
+            
+            //okay this is smart
+            int a = 0 , b = 1 ;
+            while(n > 0)
+            {
+                
+                
+                std::cout<<a;
+                a = a+b;
+                n--;
+                if(n == 0)
+                {
+                    break;
+                }
+                std::cout<<"\t ";
+
+                std::cout<<b;
+                std::cout<<"\t ";
+
+                b = a+b;
+                n--;
+            }
+        }
+        break;
+        
+
+        case 2:
+        {
+            bool isFibonacci(int d , int e)
+                {
+                    bool found = false;
+
+            int  a  = 0 , b = 1;
+
+            while(!found && a < e )
+            {
+                if((a == d && b == e) || (a == e && b == d) )
+                {
+                    found = true;
+                }
+                a = a+b ;
+                b = a+b;
+            }
+            
+            return found;
+                }
+            namespace main{
+                
+            int a , b;
+            std::cin>>a>>b;
+
+            if(isFibonacci(a ,b))
+            {
+                std::cout<< a+ b;
+            }
+
+            else std::cout<<a<<"and"<<b<<"are not fibbonacci numbers";
+
+
+            }
+            
+
+        
+
+
+        }
+        break;
+
+
+        case 3:
+        {
+            //Lucas sequence 
+            int a = 1 , b = 3 ;
+            while(n > 0)
+            {
+                
+                
+                std::cout<<a;
+                a = a+b;
+                n--;
+                if(n == 0)
+                {
+                    break;
+                }
+                std::cout<<"\t ";
+
+                std::cout<<b;
+                std::cout<<"\t ";
+
+                b = a+b;
+                n--;
+            }
+            
+        }
+        break;
+        
+        case 4:
+        {
+            // 3 sum fibbonacci series
+            
+            int a = 0 , b = 1 , c = 1 ;
+            int n = 1;
+
+            while(n < 10)
+            {   
+                std::cout<<a<<" "<<b<<" "<<c<<" "<<std::endl;
+                a = a+b+c;
+                b = a+b+c;
+                c = a+b+c;
+
+            n++;
+
+            }
+
+        }
+        break;
+
+        case 5:
+        {
+                    
+            int d ,e;
+
+            std::cin>>d>>e;
+            bool found = false;
+
+            int  a  = 0 , b = 1;
+
+            while(!found && a < e )
+            {
+                if((a == d && b == e) || (a == e && b == d) )
+                {
+                    found = true;
+                }
+                a = a+b ;
+                b = a+b;
+            }
+            std::cout<<found;    
+        }
+        break;
+
+
+        case 6:
+        {
+
+            int n ;
+            std::cin>>n;
+
+            while(n > 0)
+            {
+
+                for(int i = 1 ; i < n ; i++)
+                {
+                    if(n != 2 && (float)i/n == 0.5f)
+                    {
+                        continue;
+                    }
+                    std::cout<<"\t"<<i<<"/"<<n<<"\t";
+                }
+                n--;
+
+            }
+
+        }   
+        break;
+
+        case 7:
+        {
+            
+        }
+                
+    }
 }
 
 void twopointseven()
