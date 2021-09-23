@@ -1028,7 +1028,7 @@ void twopointsix()
                     {
                         continue;
                     }
-                    std::cout<<"\t"<<i<<"/"<<n<<"\t";
+                    std::cout<<"\t"<<i<<"/"<<n<<"\t";   // can apply sort here to get proper set.
                 }
                 n--;
 
@@ -1039,7 +1039,37 @@ void twopointsix()
 
         case 7:
         {
+
+
+            int factorial(int n)
+            {
+                return (n == 1 ) || (n == 2) ? return 1 : return n * factorial(n-1);
+            }
+            int n;
+            std::cin>>n;
+
             
+            
+            int a = 0 , b = 1 ;
+            while(n > 0)
+            {
+                
+                
+                std::cout<<a;
+                a = factorial(a)+factorial(b);
+                n--;
+                if(n == 0)
+                {
+                    break;
+                }
+                std::cout<<"\t ";
+
+                std::cout<<b;
+                std::cout<<"\t ";
+
+                b = factorial(a)+factorial(b);;
+                n--;
+            }
         }
                 
     }
@@ -1048,6 +1078,90 @@ void twopointsix()
 void twopointseven()
 {
     system("CLS");
+    std::cout<<"1. Base Problem "<<std::endl                               ;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+        //base problem 
+        case 1:
+        {
+            int n;
+            std::cin>>n;
+
+            int reverse = 0;
+            while(n > 0)
+            {
+                reverse = 10*reverse+ n%10;
+                n /= 10;
+
+            }
+        
+
+        std::cout<<reverse;
+        }
+        break;
+
+        //supplementry 2.7.1
+        case 2:
+        {
+            int n; std::cin>>n;
+
+            #include<math.h>        //for log function
+            int length = (int)(log10(n))+ 1;
+            std::cout<<length;
+
+        }
+        break;
+
+        case 3:
+        {
+            int n;std::cin>>n;
+
+            int sum = 0;
+            while(n > 0)
+            {
+                sum += n%10;
+                n /= 10;
+                
+            }
+            std::cout<<sum;
+        }
+        break;
+
+        case 4:
+        {
+                    
+            int n;
+            std::cin>>n;
+
+            int result = 0;
+            int a;
+            for(int i = n-1 ; i >= 0 ; i--)
+            {
+                std::cin>>a;
+
+
+                result = a * power(10, i) + result;
+            }
+        std::cout<<result;
+        }
+        break;
+
+
+        default: std::cout<<"wrong option"<<std::endl;
+        
+
+   }
+
+
 
 }
 void twopointeight()
