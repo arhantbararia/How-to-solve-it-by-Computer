@@ -1166,7 +1166,170 @@ void twopointseven()
 }
 void twopointeight()
 {
+
+    //will implement without array
     system("CLS");
+
+    std::cout<<"1. Base Problem "<<std::endl                               ;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+        {
+                    // enter number to be converted 
+            int a ;std::cin>>a;
+            //base to convert = 8
+
+            //quotient 
+            int q= a ;
+
+            //remainder
+            int r;
+            
+            int i = 0;
+            int result = 0;
+
+            while(q > 0)
+            {
+
+                r = q%8;
+                q /= 8;
+
+                result = r * power(10 , i)+ result;
+                i++;
+            }
+            std::cout<<result<<std::endl;
+
+        }
+        break;
+        
+
+        case 2:
+        {
+                    // enter number to be converted 
+            int a ;std::cin>>a;
+            //base to convert
+            int base; std::cin>>base;
+            //quotient 
+            int q= a ;
+
+            //remainder
+            int r;
+            
+            int i = 0;
+            int result = 0;
+
+            while(q > 0)
+            {
+
+                r = q%base;
+                q /= base ;
+
+                result = r * power(10 , i)+ result;
+                i++;
+            
+            }
+            std::cout<<result<<std::endl;
+
+        }
+        break;
+
+        case 3:
+        {
+                int power(int a, int b )
+                {
+                    int result =1 ;
+
+                    if(a == 0 || b == 0)
+                    {
+                        result =1;
+                    }
+                    else
+                    {
+                        for(int i = 1 ; i<= b ; i++)
+                        {
+                            result *= a ;
+                        }
+                    }
+                    return result;
+                }
+
+
+                    int binaryToOct(int a[])
+                    {
+                        int result = 0;
+
+                        for(int i = 0; i <= 2 ; i++ )
+                        {
+
+                            result = power(2 , i) * a[2 -i] + result;
+                            std::cout<<"i = "<<i<<" a = "<<a[2-i]<<" iterim  "<<power(2 , i) * a[2 -i]<<"\n";
+
+                        }
+                        return result;
+                        
+
+                    }
+                
+                #include<math.h>
+                        // grouping 3 bits and convert each to respective octoal number
+                
+                int a ;std::cin>>a;
+                std::cout<<a<<"\n";
+
+
+                
+                int l = ((int)log10(a))+ 1;
+                std::cout<<l<<"\n";
+                int input[3];
+                for(int i= 0 ; i< 3 ; i++)
+                {
+                    input[i] =0;
+
+                }
+                if(l%3 == 0) 
+                {
+                    std::cout<<"yes\n";
+                while(a > 0)
+                {
+                    std::cout<<"\n"<<a<<"<= a \n";
+                        
+                    input[2] = a%10;std::cout<<input[2]<<"\n";
+                    a /= 10;
+
+                    input[1] = a%10;std::cout<<input[1]<<"\n";
+                    a /= 10;
+                        
+                    input[0] = a%10;std::cout<<input[0]<<"\n";
+                    a /= 10;
+
+                        std::cout<<"\n"<<a<<"<= a \n";
+                        
+                    std::cout<<binaryToOct(input);
+                    std::cout<<"____________\n";
+                }
+                }
+
+                
+                else
+                {
+                    l += (3 - l%3);
+                    std::cout<<l<<'\n';
+                    std::cout<<"no\n";
+                
+
+                }
+            
+        }
+    }
 
 }
 
