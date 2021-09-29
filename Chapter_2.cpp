@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
-
+#include<string>
+#include<string.h>
 
 void twopointone()
 {
@@ -1244,7 +1245,11 @@ void twopointeight()
 
         case 3:
         {
-                int power(int a, int b )
+
+            //// ALERT THIS CODE IS FUCKING MESS !!!//
+             int a ;std::cin>>a;
+                
+    int power(int a, int b )
                 {
                     int result =1 ;
 
@@ -1271,24 +1276,20 @@ void twopointeight()
                         {
 
                             result = power(2 , i) * a[2 -i] + result;
-                            std::cout<<"i = "<<i<<" a = "<<a[2-i]<<" iterim  "<<power(2 , i) * a[2 -i]<<"\n";
-
+                           
                         }
                         return result;
                         
 
                     }
                 
-                #include<math.h>
-                        // grouping 3 bits and convert each to respective octoal number
-                
-                int a ;std::cin>>a;
-                std::cout<<a<<"\n";
-
+    int result = 0;
 
                 
                 int l = ((int)log10(a))+ 1;
-                std::cout<<l<<"\n";
+                
+                int rem = l;
+                int i = 0;
                 int input[3];
                 for(int i= 0 ; i< 3 ; i++)
                 {
@@ -1297,38 +1298,212 @@ void twopointeight()
                 }
                 if(l%3 == 0) 
                 {
-                    std::cout<<"yes\n";
-                while(a > 0)
-                {
-                    std::cout<<"\n"<<a<<"<= a \n";
-                        
-                    input[2] = a%10;std::cout<<input[2]<<"\n";
-                    a /= 10;
+                    while(a > 0)
+                    {
+                         
+                        input[2] = a%10;
+                        a /= 10;
 
-                    input[1] = a%10;std::cout<<input[1]<<"\n";
-                    a /= 10;
-                        
-                    input[0] = a%10;std::cout<<input[0]<<"\n";
-                    a /= 10;
+                        input[1] = a%10;
+                        a /= 10;
+                            
+                        input[0] = a%10;
+                        a /= 10;
 
-                        std::cout<<"\n"<<a<<"<= a \n";
+                            
+                            
                         
-                    std::cout<<binaryToOct(input);
-                    std::cout<<"____________\n";
-                }
+                     
+                        
+                        result += (power(10 , i )*binaryToOct(input)) ;
+                        i++;
+                   
+                    }
                 }
 
                 
                 else
                 {
-                    l += (3 - l%3);
-                    std::cout<<l<<'\n';
-                    std::cout<<"no\n";
-                
+                    rem  += (3 - l%3);
+                    
+                    while(rem > 0)
+                    {
+                        input[2] = a%10;
+                    a /= 10;
+                    rem--;
 
+
+                    input[1] = a%10;
+                    a /= 10;
+                    rem--;
+
+
+                    input[0] = a%10;
+                    a /= 10;
+                    rem--;
+
+                    if(rem == 2)
+                    {
+                        input[1] = 0;
+                        input[0] = 0;;
+                    }
+
+                    if(rem == 1 )
+                    {
+                        input[0] = 0;
+                    }
+
+                    
+                    result += (power(10 , i )*binaryToOct(input)) ;
+                    i++;
+                    }
                 }
             
+        std::cout<<result;
+
+                
+                
+            
         }
+        break;
+        case 4:
+        {
+            int a; std::cin>>a;
+
+            int result = 0;
+            int i = 0;
+            
+            int r =0 ;
+            while(a > 0)
+            {
+                r = a%10;
+                a = a/10;
+
+                result = power(2 , i)*r + result;
+                i++;
+
+            }
+
+            std::cout<<result;
+        }
+        break;
+
+        case 5:
+        {       std::string IntToBin(int a)
+                {
+                std::string binary = "";
+
+                for(int i = 0 ; i < 4 ; i++)
+                {
+                    if(a%2 == 0)
+                    {
+                        binary.push_back('0');
+                    }
+                    else
+                    {
+                        binary.push_back('1');
+                    }
+                    a /= 2;
+                }
+                // dont reverse here. reverse final result string result
+                std::cout<<binary<<std::endl;
+                return binary;
+                }
+                int a; std::cin>>a;
+                std::string result ="";
+                while(a > 0)
+                {
+                    for(int i = 0 ; i < 4 ; i++)
+                    {
+                        result.push_back(IntToBin(a%10)[i]);
+                    }
+                    a /= 10;
+                }
+                
+                std::reverse(result.begin(), result.end());
+                std::cout<<result;
+
+        }
+        break;
+
+        case 6:
+        {
+            #include<algorithm>
+            #include<string>
+
+
+            
+            float a;std::cin>>a;
+
+            int b = a;
+            float rem = a-b;
+            std::string binary = "";
+            int precision =9;
+            
+            while(precision)
+            {
+                rem *= 2;
+                if((int)rem == 0)
+                {
+                    binary.push_back('0');
+                }
+                else 
+                {
+                    binary.push_back('1');
+                }
+                rem = rem - (int)rem;
+                std::cout<<rem<<std::endl;
+                precision--;
+
+
+
+                }
+            std::cout<<binary;
+            
+            // extending this to if a  real number is given then convert it to binary.
+
+                            float a ; std::cin>>a;
+                int integral = a;
+                float fractional = a - integral;
+
+                std::string binary = "";
+                
+                int precision = 9;
+                while(integral)
+                {
+                    if(integral%2 == 0)
+                    {
+                        binary.push_back('0');
+                    }
+                    else 
+                    {
+                        binary.push_back('1');
+                    }
+
+                    integral /= 2;
+                }
+                std::reverse(binary.begin(), binary.end());
+                binary.push_back('.');
+                while(precision)
+                {
+                    fractional *= 2;
+                    if((int)fractional == 0)
+                    {
+                        binary.push_back('0');
+                    }
+                    else 
+                    {
+                        binary.push_back('1');
+
+                    }
+                    fractional =fractional - (int)fractional;
+                    
+                    precision--;
+                }
+                std::cout<<binary;
+        
+        }
+        break;
     }
 
 }
