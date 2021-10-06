@@ -1389,7 +1389,9 @@ void twopointeight()
         break;
 
         case 5:
-        {       std::string IntToBin(int a)
+        {       
+                // 8421 BCD code 
+                std::string IntToBin(int a)
                 {
                 std::string binary = "";
 
@@ -1406,7 +1408,6 @@ void twopointeight()
                     a /= 2;
                 }
                 // dont reverse here. reverse final result string result
-                std::cout<<binary<<std::endl;
                 return binary;
                 }
                 int a; std::cin>>a;
@@ -1511,6 +1512,125 @@ void twopointeight()
 void twopointnine()
 {
     system("CLS");
+
+    std::cout<<"1. Base Problem "<<std::endl                               ;
+    for(int i = 2 ; i < 5 ; i++)
+    {
+        std::cout<<i<<". supplement problem 2.2."<<i-1<<std::endl;
+        
+    }
+    
+    int choice;
+    std::cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+        {
+            #include<string>
+             std::string str;
+            std::cin>>str;
+
+            int result = 0;
+
+            for(int i = 0 ; i < str.length() ; i++)
+            {
+                result = result*10 + ((int)str[i] - 48); // 48 is ascii value of 0
+            }
+
+
+            std::cout<<result;
+            result++;
+            std::cout<<result;
+
+        }
+        break;
+
+        case 2: 
+                    {
+                        string str;
+                cin>>str;
+
+
+                float result;
+                int int_result = 0;
+                int float_result = 0;
+
+                bool afterdecimal = false;
+                for(int i = 0 ; i < str.length() ; i++)
+                {
+                    if(str[i] == '.')
+                    {
+                    afterdecimal = true; 
+                    continue;
+                    }
+                    if(afterdecimal)
+                    {
+                        float_result = float_result*10 + ((int)str[i] - 48);
+                    }
+                    else
+                    {
+                        int_result = int_result*10+ ((int)str[i] - 48);
+                        
+                    }
+                }
+
+                cout<<"integer part: "<<int_result<<endl;
+                cout<<"fractional part: "<<float_result<<endl;
+
+                int l = log10(float_result) + 1;
+                
+                result = int_result + ((float)float_result/power(10 , l));
+                cout<<result<<endl;
+        }
+        break;
+
+        case 3:
+        {
+            
+
+                float a;std::cin>>a;
+                int ipart = (int)a;
+                float fpart = a - ipart;
+                int l = log10(ipart) + 1;
+                std::string str = "";
+
+                while( l > 0)
+                {
+                    str.push_back((char)(ipart%10+ 48));
+                    a /= 10;
+
+
+                    l--;
+                }
+                str.push_back('.');
+                int precision = 3;
+                while(precision > 0)
+                {
+                    fpart *= 10;
+
+                    str.push_back((char)((int)fpart + 48));
+
+                    fpart = abs((int)fpart - fpart);
+                    precision--;
+                }
+                std::cout<<str;
+                
+                
+    
+
+        }
+        break;
+
+        case 4:
+        {
+            
+        }
+        break;
+
+
+
+    }
 
 }
 void UI()
