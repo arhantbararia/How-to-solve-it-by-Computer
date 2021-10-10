@@ -32,7 +32,10 @@ void threepointone()
 
         int error = 0.0005;
 
-        while(abs(g1-g2) <  error)
+        // using newton ralphson's method
+
+
+        while(abs(g1-g2) > error)
         {
             g1 = g2;
             g2 = (g1 + m/g1)/2;
@@ -47,12 +50,13 @@ void threepointone()
         {
             float m; std::cin>>m;
 
-                std::random_device rd;
-                std::mt19937 gen(rd());
+                std::random_device rd;// obtain a random number from hardware // object
+                std::mt19937 gen(rd());// seed the generator
 
-                std::uniform_real_distribution<> distr(0 , m);
+                std::uniform_real_distribution<> distr(0 , m);// define the range
 
-                float n = distr(gen);
+                float n = distr(gen); // generate
+                
                 while(n*n > m)
                 {
                     n--;
@@ -68,7 +72,74 @@ void threepointone()
 
                 }
                 std::cout<<n;
+        }break;
+
+        case 3{
+                
+                    float power(float a , int b )
+                    {
+                                float result = 1;
+                                if(a == 0 || b == 0)
+                                {
+                                    return 1.0f;
+                                }
+                                for(int i = 1 ; i <= b ; i++)
+                                {
+                                    result *=a;
+                                }
+                                return result;
+
+                    }
+
+                    namespace main
+                    {
+                        #include<vector>
+                        std::vector<float> vec;
+                        int m;
+
+                        while( m != 0)
+                        {
+                            std::cin>>m;
+                            if(m != 0)
+                            {
+                                vec.push_back(m);
+                            }
+                        }
+
+                        float result = 1;
+
+                        for(auto it = vec.begin() ; it !=  vec.end() ; it++)
+                        {
+                            result *= *it;
+                        }
+
+                        std::cout<<result<<std::endl;
+                        int n = vec.size();
+                        float g1= 0;
+                        float g2 = result/2;
+
+                        while(abs(g1 - g2) > 0.00005)
+                        {
+                            g1 = g2;
+                            g2 = g1 - (power(g1 , n) - result)/(n* power(g1 , (n-1))); //newton ralphson's method  
+                        
+                            std::cout<<g2<<std::endl;
+
+
+                        }
+
+                        std::cout<<g2;
+
+                    }
+
+        }break;
+
+        case 4:
+        {
+            
+
         }
+
 
     }
 }
@@ -78,7 +149,7 @@ void threepointone()
 void UI()
 {
     int choice;
-    std::cout<<"3.1 Exchanging the values"<<std::endl;
+    std::cout<<"3.1 Finding the square root of a number "<<std::endl;
     
     std::cout<<"3.2 Counting"<<std::endl;
     
