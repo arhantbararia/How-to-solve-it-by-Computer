@@ -23,24 +23,24 @@ void threepointone()
     {
         case 1:
         {
-         // Base problem
-         int m; std::cin>>m;
+                // Base problem
+                int m; std::cin>>m;
 
-        int g1= 0;
+                int g1= 0;
 
-        int g2 = m/2;
+                int g2 = m/2;
 
-        int error = 0.0005;
+                int error = 0.0005;
 
-        // using newton ralphson's method
+                // using newton ralphson's method
 
 
-        while(abs(g1-g2) > error)
-        {
-            g1 = g2;
-            g2 = (g1 + m/g1)/2;
+                while(abs(g1-g2) > error)
+                {
+                    g1 = g2;
+                    g2 = (g1 + m/g1)/2;
 
-        }
+                }
 
         }
         break;
@@ -72,9 +72,11 @@ void threepointone()
 
                 }
                 std::cout<<n;
-        }break;
+        }
+        break;
 
-        case 3{
+        case 3
+        {
                 
                     float power(float a , int b )
                     {
@@ -91,8 +93,7 @@ void threepointone()
 
                     }
 
-                    namespace main
-                    {
+                   
                         #include<vector>
                         std::vector<float> vec;
                         int m;
@@ -130,20 +131,272 @@ void threepointone()
 
                         std::cout<<g2;
 
-                    }
+                    
 
-        }break;
+        }
+        break;
 
         case 4:
         {
             
 
         }
+        break;
 
 
     }
 }
 
+
+void threepointtwo()
+{
+
+
+system("CLS");
+    // EXCHANGING VALUES OF VARIABLES
+    int choice;
+    std::cout<<"1. PROBLEM"<<std::endl;
+    for(int i = 2 ; i < 7; i++)
+    {
+        std::cout<<i<<". supplement problem 3.1."<<i-1<<std::endl;
+
+    }
+    std::cout<<"\n Enter your Choice : ";
+    std::cin>>choice;
+    switch(choice)
+    {
+        case 1:
+        {
+            // BAse problem
+            int n;std::cin>>n;
+            int sdivisor = 1;
+
+            if(n%2 == 0)
+            {
+                sdivisor = 2;
+            }
+            else
+            {
+                for(int i = 3 ; i < std::sqrt(n) ; i += 2 )
+                {
+                    if(n%i == 0)
+                    {
+                        sdivisor = i;
+                        break;
+                    }
+                }
+            }
+            std::cout<<sdivisor;
+        }
+        break;
+
+        case 2:
+        {
+            int n;std::cin>>n;
+            int sdivisor = 1;
+
+            if(n%2 == 0)
+            {
+                sdivisor = 2;
+            }
+            else
+            {
+                for(int i = 3 ; i*i < n ; i += 2 )
+                {
+                    if(n%i == 0)
+                    {
+                        sdivisor = i;
+                        break;
+                    }
+                }
+            }
+            std::cout<<sdivisor;
+        }
+        break;
+
+        case 3:
+        {
+           int n;std::cin>>n;
+    
+
+   
+    
+        for(int i = 3 ; i < n ; i += 2 )
+        {
+            if(n%i == 0)
+            {
+                std::cout<<i<<"\n";
+                sdivisor = i;
+            
+            }
+        }
+        }
+        break;
+
+        case 4:
+        {
+                        int n;cin>>n;
+                
+
+                int j = 2;
+                
+                int divisor_count ;
+                
+                while(true)
+                {
+                    divisor_count = 0;
+                    for(int i = 1; i <= j ; i++)
+                    {
+                        if(j%i == 0)
+                        {
+                            divisor_count++;
+
+                        }
+
+                        
+                    }
+                    if(divisor_count >= n )
+                        {
+                            cout<<j<<endl;
+                            cout<<divisor_count<<endl;
+                            break;
+
+                        }
+
+                    j++;
+                }
+                
+
+                
+
+        }
+        break;
+        case 5:
+        {
+            using namespace std;
+
+                int j = 2;
+                
+                int divisor_count ;
+                int max_divisor_count = 1;
+                int max = 2;
+                
+                while(j <= 100)
+                {
+                    divisor_count = 0;
+                    for(int i = 1; i <= j ; i++)
+                    {
+                        if(j%i == 0)
+                        {
+                            divisor_count++;
+
+                        }
+
+                        
+                    }
+                    if(divisor_count >= max_divisor_count )
+                        {
+                            max_divisor_count = divisor_count;
+                            max = j;
+                            
+
+                        }
+
+                    j++;
+                }
+                cout<<max_divisor_count<<endl;
+                cout<<max;
+
+        }
+        break;
+
+        case 6:
+        {
+            int n;std::cin>>n;
+            int sdivisor = 1;
+
+            if(n%2 == 0)
+            {
+                sdivisor = 2;
+            }
+            else if(n%3 == 0)
+            {
+                sdivisor = 3;
+            }
+            else
+            {
+                for(int i = 5 ; i < std::sqrt(n) ; i += 2 )
+                {
+                    if(n%i == 0)
+                    {
+                        sdivisor = i;
+                        break;
+                    }
+                }
+            }
+            std::cout<<sdivisor;
+        }
+        break;
+
+        case 7:
+        {
+            /*
+            
+/*
+n = a2 - b2 = (a+b)(a-b) 
+
+where (a+b) and (a-b) are
+the factors of the number n
+
+
+
+            FermatFactor(N): // N should be odd
+                a ← ceiling(sqrt(N))
+                b2 ← a*a - N
+                repeat until b2 is a square:
+                    a ← a + 1
+                    b2 ← a*a - N 
+                // equivalently: 
+                // b2 ← b2 + 2*a + 1 
+                // a ← a + 1
+                return a - sqrt(b2) // or a + sqrt(b2)
+            */
+
+           
+                int a, b2 , b;
+
+
+                int n;cin>>n;
+
+                a = sqrt(n)+1;
+
+                
+                b2 = abs((a*a) - n);
+                b = sqrt(b2);
+                
+
+                while(!isPerfectSqure(b2))  // is perfect square is self explanatory
+                {
+                    cout<<"a = "<<a<<endl;
+                    cout<<"b = "<<b<<endl;
+                    a += 1;
+                    b = abs((a*a) - n);
+
+                }
+
+                cout<<"factors are: \n";
+                cout<<a+b<<endl;
+                cout<<a-b<<endl;
+
+        }
+        break;
+
+
+        }
+
+
+    }
+}
 
 
 void UI()
@@ -176,7 +429,7 @@ void UI()
         case 1: threepointone();
         break;
 
-        case 2: threepointthree();
+        case 2: threepointtwo();
         break;
 
         case 3: threepointthree();
