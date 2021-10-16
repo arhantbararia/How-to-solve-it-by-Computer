@@ -399,12 +399,117 @@ the factors of the number n
 }
 
 
+void threepointthree()
+{
+    system("CLS");
+    // EXCHANGING VALUES OF VARIABLES
+    int choice;
+    std::cout<<"1. PROBLEM"<<std::endl;
+    for(int i = 2 ; i < 7; i++)
+    {
+        std::cout<<i<<". supplement problem 3.1."<<i-1<<std::endl;
+
+    }
+    std::cout<<"\n Enter your Choice : ";
+    std::cin>>choice;
+    switch(choice)
+    {
+        case 1:
+        {
+            int gcd(int largenum , int smallnum)
+            {
+                if(largenum%smallnum == 0)
+                {
+                    return smallnum;
+                }
+                else
+                {
+                    gcd(smallnum , largenum%smallnum);
+                }
+            }
+            int a ; std::cin>>a;
+            int b; std::cin>>b;
+
+            int result = gcd(a, b);
+
+            std::cout<<result;
+         }
+        break;
+
+        case 2:
+        {
+            // using while loop
+             int largenum;cin>>largenum;
+            int smallnum;cin>>smallnum;
+
+            int rem = largenum%smallnum;
+
+            while(rem != 0)
+            {
+
+                int temp = smallnum;
+                
+                smallnum = largenum%smallnum;
+            
+                largenum = temp;
+                
+                rem = largenum%smallnum;
+
+            }
+
+            cout<<smallnum;
+        }
+        break;
+
+        case 3:
+        {
+            int largenum;cin>>largenum;
+            int smallnum;cin>>smallnum;
+
+            int rem = largenum%smallnum;
+            int result =1 ;
+
+            while((largenum%2 == 0) && (smallnum%2 == 0))
+            {
+                largenum /= 2;
+                smallnum /= 2;
+
+                result *= 2;
+
+            }
+
+            while(rem != 0)
+            {
+
+                int temp = smallnum;
+                
+                smallnum = largenum%smallnum;
+            
+                largenum = temp;
+                
+                rem = largenum%smallnum;
+
+            }
+            result *= smallnum;
+
+            cout<<result;
+        }
+        break;
+
+        case 4:
+        {
+            int m
+        }
+        
+    }
+}
+
 void UI()
 {
     int choice;
     std::cout<<"3.1 Finding the square root of a number "<<std::endl;
     
-    std::cout<<"3.2 Counting"<<std::endl;
+    std::cout<<"3.2 The smallest divisor of an integer"<<std::endl;
     
 
     std::cout<<"3.3 Summation of set of numbers"<<std::endl;
