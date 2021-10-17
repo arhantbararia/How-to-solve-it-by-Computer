@@ -608,12 +608,65 @@ void threepointthree()
                     {
                         scd = i;
                         break;
-                        
+
                     }    
                  
                 }
             }
         }break;
+
+        case 10:
+        {
+            int findgcd(int a , int b)
+            {
+                if(a%b == 0)
+                {
+                    return b;
+                }
+                else
+                {
+                    return findgcd(b , a%b);
+                }
+            }
+
+        int findlcm(int gcd , int mul)
+        {
+            return mul/gcd;
+        }
+
+        class fraction
+        {
+        public:
+
+            int numerator;
+            int denominator;
+
+            fraction(int a , int b ){
+                numerator = a ;
+                denominator = b;
+
+            }
+
+            void display()
+            {
+                cout<<numerator<<"/"<<denominator;
+            }
+
+            fraction& operator+(const fraction& rhs)
+            {
+                int denom = findlcm( findgcd(denominator , rhs.denominator), denominator*rhs.denominator);
+                cout<<denom<<endl;
+                numerator = (numerator*((int)denom/denominator)) + (rhs.numerator*((int)denom/rhs.denominator));
+                denominator = denom;
+
+                return *this;
+
+            }
+
+
+        };
+        }
+        break;
 
 
 
