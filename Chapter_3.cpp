@@ -463,6 +463,47 @@ void threepointthree()
 
         case 3:
         {
+            // replace mod with minus
+             int largenum;cin>>largenum;
+            int smallnum;cin>>smallnum;
+
+            int rem = largenum-smallnum;
+
+            while(rem != 0)
+            {
+
+                int temp = smallnum;
+                
+                smallnum = largenum-smallnum;
+            
+                largenum = temp;
+                
+                rem = largenum-smallnum;
+
+            }
+
+            cout<<smallnum;   
+        }
+        break;
+
+        case 4:
+        {
+             int arr[] = {45 , 67 , 89 , 93};
+    
+    
+            int gcd = findgcd(arr[1] , arr[0]);
+            
+            for(int i = 2 ; i < 4 ; i++)
+            {
+                gcd = findgcd(arr[i] , gcd ); //findgcd , as defined in base problem
+            }
+
+            cout<<gcd;
+        }
+        break;
+
+        case 5:
+        {
             int largenum;cin>>largenum;
             int smallnum;cin>>smallnum;
 
@@ -486,6 +527,7 @@ void threepointthree()
                 smallnum = largenum%smallnum;
             
                 largenum = temp;
+
                 
                 rem = largenum%smallnum;
 
@@ -496,10 +538,86 @@ void threepointthree()
         }
         break;
 
-        case 4:
+        case 6
         {
-            int m
+            // will do after doing algorithm 3.5
         }
+        break;
+
+        case 7:
+        {
+            
+
+
+                // generating isFibonacci numbers and testing their gcd
+                
+            int  a  = 1 , b = 1;
+
+                        while(n > 0)
+                        {
+                        cout<<"gcd of: "<<a<<' '<<b<<"is "<<findgcd(b , a)<<"\n";
+                            a = a+b ;
+                            b = a+b;
+                            n--;
+                        }        
+        }
+        break;
+
+        case 8:
+        {
+             // The product of the two numbers is the product of the LCM and the GCD.
+            
+            int gcd(int largenum , int smallnum)
+            {
+                if(largenum%smallnum == 0)
+                {
+                    return smallnum;
+                }
+                else
+                {
+                    gcd(smallnum , largenum%smallnum);
+                }
+            }
+
+            // under main
+            int a ; std::cin>>a;
+            int b; std::cin>>b;
+            int mul = a*b;
+
+            int gcd  = gcd(a, b);
+
+            int lcm = mul/gcd;
+            cout<<lcm;
+
+        }break;
+
+        case 9:
+        {
+            int a;cin>>a;
+            int b;cin>>b;
+            
+            int scd;
+            if(a%2 == 0  && b%2 == 0 )
+            {
+                scd = 2;
+            }
+            else{
+                for(int i = 3 ; i < sqrt(b) ; i+= 2 )
+                {
+                    if(a%i == 0  && b%i == 0)
+                    {
+                        scd = i;
+                        break;
+                        
+                    }    
+                 
+                }
+            }
+        }break;
+
+
+
+
         
     }
 }
