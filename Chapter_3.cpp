@@ -675,6 +675,116 @@ void threepointthree()
     }
 }
 
+void threepointfour()
+{
+        system("CLS");
+        // EXCHANGING VALUES OF VARIABLES
+        int choice;
+        std::cout<<"1. PROBLEM"<<std::endl;
+        for(int i = 2 ; i < 7; i++)
+        {
+            std::cout<<i<<". supplement problem 3.1."<<i-1<<std::endl;
+
+        }
+        std::cout<<"\n Enter your Choice : ";
+        std::cin>>choice;
+        switch(choice)
+        {
+            case 1:
+            {
+                int n; std::cin>>n;
+                
+                vector<int> primes;
+                vector<int> multiples;
+
+                primes.push_back(2);
+                primes.push_back(3);
+                primes.push_back(5);
+
+                    int limit = 2;
+                    int plimsq = 25;
+                    bool prime = false;
+                    int x = 1;
+                    if(x < 5)
+                    {
+                        for(int i= 0 ; i < limit+1 ; i++)
+                        {
+                            cout<<"prime: "<<primes[i]<<endl;
+
+                        }
+                    }
+                    x =5; // initialise dx to 5 
+                    int dx = 2;
+                    
+                    for(int i = 2 ; i <= 5  ; i++)
+                            {
+                                
+                                multiples.push_back(primes[limit] * i);
+                            }
+                    while(x < n)
+                    {
+                        x += dx;
+                        dx = abs(dx - 6);
+                        cout<<"x is:"<<x<<endl;
+
+                        prime = true;
+
+
+                        if(x >= plimsq)
+                        {
+
+                            limit += 1;
+                            plimsq = primes[limit] * primes[limit];
+
+                        }
+                            for(int i = 0 ; i < multiples.size() ; i++)
+                            {
+                                cout<<multiples[i]<<" ";
+
+                            }
+                            cout<<endl;
+                        // test x against multiples
+                        for(int i = 0 ; i < multiples.size() ; i++)
+                            {
+                                
+                                
+                                if(multiples[i] == x )
+                                {
+                                    prime = false;
+                                    break;
+
+                                }
+                            }
+                            
+
+                        
+
+                        if(prime)
+                        {
+                            cout<<"prime: "<<x<<endl;
+                            primes.push_back(x);
+                            limit += 1;
+
+
+                        }
+                        if(prime)
+                        {
+                            for(int i = 2 ; i <= primes.back()  ; i++)
+                            {
+                                
+                                multiples.push_back(primes[limit] * i);
+                            }
+                        }  
+                        
+                        // increasing x skipping multiples of 2 and 3;
+
+        
+                    }
+            }break;
+        }
+
+}
+
 void UI()
 {
     int choice;
@@ -683,9 +793,9 @@ void UI()
     std::cout<<"3.2 The smallest divisor of an integer"<<std::endl;
     
 
-    std::cout<<"3.3 Summation of set of numbers"<<std::endl;
+    std::cout<<"3.3 Greatest common divisor of 2 numbers "<<std::endl;
     
-    std::cout<<"3.4 Factorial Computation"<<std::endl;
+    std::cout<<"3.4 Generating prime numbers"<<std::endl;
     
     std::cout<<"3.5 Sine Function computation"<<std::endl;
     
