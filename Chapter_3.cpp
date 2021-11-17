@@ -781,10 +781,97 @@ void threepointfour()
         
                     }
             }break;
+
+
         }
 
 }
 
+
+// 3.4 and 3.5 will do after some research. Book theory is not enough
+
+
+
+void threepointsix()
+{
+     system("CLS");
+        // Pseudo Random number generation 
+
+        int choice;
+        std::cout<<"1. PROBLEM"<<std::endl;
+        for(int i = 2 ; i < 7; i++)
+        {
+            std::cout<<i<<". supplement problem 3.1."<<i-1<<std::endl;
+
+        }
+        std::cout<<"\n Enter your Choice : ";
+        std::cin>>choice;
+        switch(choice)
+        {
+            /* 
+            a-> multiplier, b-> increment, m-> modulus
+            a > roo(m) , a < m-root(m)
+            b-> relatively prime to m
+            sequence of pseud0 random generated numbers have a period of 'm'
+            */ 
+            case 1:
+            {
+                int m = 4096;
+                int a = 109;
+                int b = 853;
+                int x = m/2;
+
+                while(true)
+                {
+                    cout<<x<<endl;
+                    x = (a*x + b)%m;
+                    sum +=x ;
+                    temp =x;
+                }
+            }break;
+
+            case 2:
+            {
+                int x = m/2;
+                int temp =(a*x + b)%m;
+                long sum = 0;
+
+                while(temp != m/2)
+                {
+                    cout<<x<<endl;
+                    x = (a*x + b)%m;
+                    sum +=x ;
+                    temp =x;
+                }
+
+                cout<<"generation repeating"<<endl;
+                cout<<"mean: "<<(float)(sum/m)<<endl;
+                float mean = (float)(sum/m);
+
+                float deviation_sum=0;
+                int n = m;
+                x = m/3;
+                while(n >0)
+                {
+                    x = (a*x + b)%m;
+                    deviation_sum += ((x - mean)*(x-mean));
+                    
+                    n--;
+                }
+                cout<<"deviation_sum: "<<deviation_sum<<endl;
+                float variance = deviation_sum/(m-1);
+
+
+                cout<<"variance : "<<variance<<endl;
+            }break;
+
+            case 3:
+            {
+                    
+            }break;
+
+        }
+}
 void UI()
 {
     int choice;
